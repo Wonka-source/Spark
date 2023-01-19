@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['spark-project.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["spark-project.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -40,12 +40,24 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.messages',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'app_spark',
 ]
+
+SITE_ID = 1
+
+ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = '/'
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

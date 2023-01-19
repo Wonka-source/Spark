@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('app_spark.urls'), name='app_spark_urls'),
+    path("accounts/", include("allauth.urls")),
 ]
