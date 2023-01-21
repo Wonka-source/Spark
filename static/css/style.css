@@ -28,3 +28,13 @@ body {
 .dark-bg {
     background-color: #9ba7b3;
 }
+
+h{
+    font-family:'Franklin Gothic Medium', monospace, sans-serif;
+    
+}
+
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}

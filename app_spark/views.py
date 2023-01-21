@@ -17,3 +17,10 @@ class EventList(generic.ListView):
 #     def form_valid(self, form):
 #         response = super().form_valid(form)
 #         return redirect('home')
+
+def about(request):
+
+    return render(
+        request,
+        "about.html",
+    )

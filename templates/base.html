@@ -6,6 +6,8 @@
 <head>
     <title>All Spark</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -29,13 +31,13 @@
                     <span class="red"> s</span><span class="green">p</span><span class="blue">a</span><span
                         class="red">r</span><span class="green">k</span></span>
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span class="navbar-text text-muted text-justify">
-                Dublin events
+                Your Event Connection Hub
             </span>
             <div class="collapse navbar-collapse justify-content-end" id="navbarText">
                 <ul class="navbar-nav mb-2 mb-lg-0 navbar-text">
@@ -44,18 +46,24 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{% url 'home' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
+                    </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Signup</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                    </li>                    
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li>
                 </ul>
-                
+
             </div>
         </div>
     </nav>
@@ -67,8 +75,20 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-4 bg-dark">
-        <p class="m-0 text-center text-white">Your Event Connection Hub</p>
+    <footer class="footer mt-auto py-2 bg-dark  justify-content-center">
+        <!-- <p class="m-0 text-center text-white">Dublin events</p> -->
+        
+        {% if user.is_authenticated == False %}
+        <a class="nav-link m-0 text-center py-0 text-light" href="{% url 'about' %}">Want to promote an event?<br>
+            Start here<br>
+            To find out more.</a>
+            {% else %}
+            <a class="nav-link m-0 text-center py-0 text-light" href="{% url 'home' %}">User logged in<br>
+                <br>
+                <br></a>
+                {% endif %}
+            
+        
 
     </footer>
 </body>
