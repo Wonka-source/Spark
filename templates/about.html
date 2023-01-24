@@ -8,24 +8,24 @@
                 in
                 Ireland a platform to showcase and promote their upcoming local events.
             </p>
-            <h4 class="py-3">In the near future</h4>
+            <h3 class="py-3">In the near future</h3>
             <p class="text-justify"> Currently, we only
                 feature
                 events in Dublin but we plan to expand to cover the rest of Ireland soon.</p>
 
-            {% if user.is_authenticated == False%}
+            <!-- {% if user.is_authenticated == False %} -->
 
-            <h3 class="py-3">Sign up now</h3>
+            <h4 class="py-3">Sign up now</h3>
             <p>Promote your events by registering for an account</p>
             <button class="btn btn-success" type="submit"><a class="nav-link d-inline text-light "
                     href="{% url 'account_signup' %}">Register</a></button>
 
-            {% else %}
+            <!-- {% else %}
 
             <button class="btn btn-success my-5" type="submit"><a class="nav-link d-inline text-light "
                 href="{% url 'home' %}">Create events</a></button>
 
-            {% endif %}
+            {% endif %} -->
 
         </div>
     </div>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+
+<h2> {% block title %} Profile {% endblock %}</h2>
+
+<p>Username: {{ user }}</p>
+<p>Email {{ user.email }}</p>
+<div class="container my-5">
+    <div class="row">
+        <div class="text-center">
+            <a href="{% url 'create_event' %}">Create Event</a>
+
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <h2>Access denied</h2>
+            <p>Please login or signup to continue</p>
+
+
+            <a href="{% url 'account_login' %}"><button class="btn-success">Login</button></a>
+
+            <ul></ul>
+
+            <a href="{% url 'about' %}"><button class="btn-success">Signup</button></a>
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% endblock %}

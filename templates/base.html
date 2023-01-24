@@ -37,7 +37,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span class="navbar-text text-muted text-justify">
-                Your Event Connection Hub
+                Dublin events
             </span>
             <div class="collapse navbar-collapse justify-content-end" id="navbarText">
                 <ul class="navbar-nav mb-2 mb-lg-0 navbar-text">
@@ -46,22 +46,22 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Profile</a>
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
-                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">Signup</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>                    
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
+                    {% endif %}
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                    </li> -->
                 </ul>
 
             </div>
@@ -77,18 +77,18 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-2 bg-dark  justify-content-center">
         <!-- <p class="m-0 text-center text-white">Dublin events</p> -->
-        
-        {% if user.is_authenticated == False %}
-        <a class="nav-link m-0 text-center py-0 text-light" href="{% url 'about' %}">Want to promote an event?<br>
-            Start here<br>
-            To find out more.</a>
-            {% else %}
-            <a class="nav-link m-0 text-center py-0 text-light" href="{% url 'home' %}">User logged in<br>
-                <br>
-                <br></a>
-                {% endif %}
-            
-        
+
+
+        <p class="nav-link m-0 text-center py-0 text-light">Your Event Connection Hub<br>
+            <br>
+        </p>
+        {% if user.is_authenticated %}
+        <p class="m-0 text-center py-0 text-light">User logged in<br>
+
+            <br></p>
+        {% endif %}
+
+
 
     </footer>
 </body>
