@@ -1,11 +1,10 @@
 from django import forms
 from .models import Event
-from django.contrib.admin.widgets import AdminSplitDateTime
+from django.contrib.auth.models import User
 
 
 class EventForm(forms.ModelForm):
-    when = forms.DateTimeField(widget=AdminSplitDateTime)
-
+    
     class Meta:
         model = Event
-        fields = ('title', 'image', 'venue', 'when', 'description', 'status',)
+        fields = ('title', 'promotion_company_name', 'image', 'where', 'when', 'description', 'status',)
