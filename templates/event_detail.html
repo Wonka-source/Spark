@@ -1,4 +1,4 @@
-{% extends "base.html" %}   {% block content %}
+{% extends "base.html" %} {% block content %}
 
 {% load cloudinary %}
 
@@ -9,31 +9,31 @@
             <div class="text-center">
                 {% if event.status == 0 %}
                 <p class="heading text-center red m-0"> <strong>Current Status: Draft</strong> </p>
-                    {% endif %}
-                    
-                <h3 class=" font-140  m-sm-1 text-capitalize">{{ event.promotion_company_name }}</h3>  
-                    
-                
+                {% endif %}
+
+                <h3 class=" font-140  m-sm-1 text-capitalize">{{ event.promotion_company_name }}</h3>
+
+
 
                 <div class="m-lg-1">
                     <ul></ul>
                     {% if "placeholder" in event.image.url %}
-                    <img height=300 width=500 crop="fill" class="img-fluid" src="/static/images/pexels-aleksandar-pasaric-2078071.jpg" >                    
-                    {% else %}                    
-                        {% cloudinary event.image height=300 width=500 crop="fill" class="img-fluid" %}                    
+                    <img height=300 width=500 crop="fill" class="img-fluid" src="/static/images/pexels-aleksandar-pasaric-2078071.jpg">
+                    {% else %}
+                    {% cloudinary event.image height=300 width=500 crop="fill" class="img-fluid" %}
                     {% endif %}
                 </div>
                 <p class="p-0 m-0">Presents:</p>
-                <h4 class="text-lg text-dark text-capitalize">{{ event.title }} <span class="text-primary"> @ </span>  {{ event.where }}</h4>
+                <h4 class="text-lg text-dark text-capitalize">{{ event.title }} <span class="text-primary"> @ </span> {{ event.where }}</h4>
                 <ul></ul>
-                
+
                 <ul></ul>
             </div>
-            <div class="">
+            <div>
                 <p class="text-dark pb-5 d-flex justify-content-evenly"> {{ event.description | safe }} </p>
             </div>
             <div>
-                
+
             </div>
         </div>
     </div>

@@ -10,7 +10,10 @@ STATUS = ((0, 'Draft'), (1, "Post to All sparks"))
 class Event(models.Model):
     title = models.CharField(max_length=200)
     promotion_company_name = models.CharField(max_length=200)
-    promoter = models.ForeignKey(User, on_delete=models.CASCADE,related_name="event_pages")
+    promoter = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="event_pages")
     image = CloudinaryField(blank=True, default="placeholder")
     where = models.CharField(max_length=250)
     when = models.DateTimeField(default=timezone.now)

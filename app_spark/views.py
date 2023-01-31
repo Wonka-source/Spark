@@ -13,15 +13,21 @@ from django.contrib import messages
 
 class EventList(generic.ListView):
     model = Event
-    queryset = Event.objects.filter(status=1, when__gte=(timezone.now() - timedelta(hours=24))).order_by('when')
+    queryset = Event.objects.filter(
+        status=1,
+        when__gte=(
+            timezone.now() -
+            timedelta(
+                hours=24))).order_by('when')
     template_name = 'index.html'
     paginate_by = 6
 
 
 class UserProfile(LoginRequiredMixin, View):
-    
+
     def get(self, request):
-        user_event_list = Event.objects.filter(promoter=request.user).all().order_by('-created_on')
+        user_event_list = Event.objects.filter(
+            promoter=request.user).all().order_by('-created_on')
         today = timezone.now()
         return render(
             request,
@@ -37,7 +43,7 @@ class UserProfile(LoginRequiredMixin, View):
 def event_detail(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     template = 'event_detail.html'
-    context = {        
+    context = {
         'page_title': 'Event Detail',
         'event': event
     }
@@ -51,7 +57,7 @@ def event_detail(request, event_id):
 
 @login_required(login_url='/accounts/login/')
 def add_event(request):
-    
+
     template = 'create_event.html'
 
     form = EventForm()
@@ -80,8 +86,8 @@ def add_event(request):
 def edit_event(request, event_id):
 
     event = get_object_or_404(Event, id=event_id)
-    if event.promoter != request.user:           
-        raise PermissionDenied  
+    if event.promoter != request.user:
+        raise PermissionDenied
 
     form = EventForm(instance=event)
 
@@ -111,8 +117,8 @@ def edit_event(request, event_id):
 def delete_event(request, event_id):
 
     event = get_object_or_404(Event, id=event_id)
-    if event.promoter != request.user:           
-        raise PermissionDenied  
+    if event.promoter != request.user:
+        raise PermissionDenied
 
     form = EventForm(instance=event)
 
@@ -139,7 +145,7 @@ def delete_event(request, event_id):
 
 
 def about(request):
-    context = {                
+    context = {
         'page_title': 'About',
     }
     return render(
@@ -150,7 +156,7 @@ def about(request):
 
 
 def handler404(request, exception):
-    
+
     return render(request, "404.html", status=404)
 
 

@@ -4,8 +4,6 @@
 {% load crispy_forms_tags %}
 
 
-
-
 {% if user.is_authenticated %}
 
 
@@ -15,7 +13,7 @@
             <h3>{% block title %} Create Event {% endblock %}</h3>
             <h6 class="text-muted my-1 pb-4">Please enter the date and time in the format displayed in the input field!</h6>
             <form class="" method="POST" action="create_event" enctype="multipart/form-data">
-                <!-- {{ event_form | crispy }} -->
+
                 {{ form.as_p  }}
                 {% csrf_token %}
 
@@ -32,5 +30,7 @@
         </div>
     </div>
 </div>
+
+
 {% endif %}
 {% endblock %}

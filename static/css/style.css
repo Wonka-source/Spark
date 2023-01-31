@@ -1,13 +1,12 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #f9fafc;
 }
 
-
 .brand {
-    font-family: 'Courier Prime', monospace, sans-serif;
+    font-family: "Courier Prime", monospace, sans-serif;
     font-size: 1.8rem;
     font-weight: bolder;
-    color: #4A4A4F;
+    color: #4a4a4f;
 }
 
 .img-thumbnail {
@@ -15,46 +14,40 @@ body {
     height: 50px;
 }
 
-.event_detail_img{
-    
-    height: 300px; 
-    width: 500px;
-}
-
-.link{
+.link {
     color: #4b455a;
     text-decoration: none;
 }
 
-.font-140{
+.font-140 {
     font-size: 140%;
 }
 
-.font-130{
+.font-130 {
     font-size: 130%;
 }
 
-.font-120{
+.font-120 {
     font-size: 120%;
 }
 
-.font-108{
+.font-108 {
     font-size: 108%;
 }
 
-.red{
-    color:rgb(235, 62, 62);
+.red {
+    color: rgb(235, 62, 62);
 }
 
-.green{
-    color:rgb(0, 206, 0);
+.green {
+    color: rgb(0, 206, 0);
 }
 
-.blue{
+.blue {
     color: rgb(47, 47, 236);
 }
 
-.navbar-collapse{
+.navbar-collapse {
     flex-grow: initial;
 }
 
@@ -62,26 +55,24 @@ body {
     background-color: #9ba7b3;
 }
 
-.h{
-    font-family:'Franklin Gothic Medium', monospace, sans-serif;
-    
+.h {
+    font-family: "Franklin Gothic Medium", monospace, sans-serif;
 }
 
-ul{
+ul {
     text-decoration: none;
     list-style-type: none;
 }
 
-
-.custom-nav{
+.custom-nav {
     text-decoration: none;
-    text-shadow: 5px
+    text-shadow: 5px;
 }
 
 .custom-nav:hover {
     color: #0d6efd;
 }
 
-.text-heading-style{
+.text-heading-style {
     color: #e68e1b;
 }
