@@ -6,11 +6,12 @@ from .forms import EventForm
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from datetime import timedelta
 
 
 class EventList(generic.ListView):
     model = Event
-    queryset = Event.objects.filter(status=1).order_by('-when')
+    queryset = Event.objects.filter(status=1, when__gte=(timezone.now() - timedelta(hours=24))).order_by('when')
     template_name = 'index.html'
     paginate_by = 6
 
