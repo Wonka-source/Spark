@@ -103,6 +103,36 @@ def edit_event(request, event_id):
     return render(request, template, context)
 
 
+@login_required(login_url='/accounts/login/')
+def delete_event(request, event_id):
+
+    event = get_object_or_404(Event, id=event_id)
+    if event.promoter != request.user:           
+        raise PermissionDenied  
+
+    form = EventForm(instance=event)
+
+    template = 'delete_event.html'
+
+    context = {
+        'page_title': 'Delete Event',
+        'form': form,
+        'event_id': event_id,
+    }
+
+    if request.method == 'POST':
+
+        form = EventForm(request.POST, request.FILES, instance=event)
+
+        if form.is_valid():
+            event.delete()
+            return redirect(
+                reverse('user_profile')
+            )
+
+    return render(request, template, context)
+
+
 def about(request):
 
     return render(
