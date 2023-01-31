@@ -32,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 
-ALLOWED_HOSTS = ["spark-project.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["spark-project.herokuapp.com", "localhost", "sparksparkspark.herokuapp.com"]
 
 
 # Application definition
