@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic, View
 from .models import Event
 from django.contrib.auth.decorators import login_required
 from .forms import EventForm
 from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 
 
 class EventList(generic.ListView):
@@ -28,6 +29,23 @@ class UserProfile(LoginRequiredMixin, View):
                 'today': today,
             }
         )
+
+
+def event_detail(request, event_id):
+    event = get_object_or_404(Event, id=event_id)
+    template = 'event_detail.html'
+    context = {        
+        'page_title': 'Event Detail',
+        'event': event
+    }
+    if event.status == 1:
+        return render(request, template, context)
+    elif event.status == 0 and event.promoter == request.user:
+        return render(request, template, context)
+    else:
+        raise PermissionDenied
+
+
 
 
 def about(request):
