@@ -73,6 +73,35 @@ def add_event(request):
     return render(request, template, context)
 
 
+@login_required(login_url='/accounts/login/')
+def edit_event(request, event_id):
+
+    event = get_object_or_404(Event, id=event_id)
+    if event.promoter != request.user:           
+        raise PermissionDenied  
+
+    form = EventForm(instance=event)
+
+    template = 'edit_event.html'
+
+    context = {
+        'page_title': 'Edit Event',
+        'form': form,
+        'event_id': event_id,
+    }
+
+    if request.method == 'POST':
+
+        form = EventForm(request.POST, request.FILES, instance=event)
+
+        if form.is_valid():
+            form.save()
+            return redirect(
+                reverse('user_profile')
+            )
+
+    return render(request, template, context)
+
 
 def about(request):
 

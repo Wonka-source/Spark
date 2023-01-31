@@ -71,7 +71,7 @@
           {% endif %}
         </td>
         <td>
-          <a href="/">Edit</a>
+          <a href="{% url 'edit_event' event.id %}">Edit</a>
           <a href="/">Delete</a>
           <a href="{% url 'event_detail' event.id %}">View</a>
         </td>
