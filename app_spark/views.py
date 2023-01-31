@@ -7,6 +7,7 @@ from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from datetime import timedelta
+from django.urls import reverse, path
 
 
 class EventList(generic.ListView):
@@ -46,6 +47,30 @@ def event_detail(request, event_id):
     else:
         raise PermissionDenied
 
+
+@login_required(login_url='/accounts/login/')
+def add_event(request):
+    
+    template = 'create_event.html'
+
+    form = EventForm()
+
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            event = form.save(commit=False)
+            event.promoter = request.user
+            event.save()
+            return redirect(
+                reverse('user_profile')
+            )
+    context = {
+        'page_title': 'Create Event',
+        'form': form
+    }
+
+    return render(request, template, context)
 
 
 
