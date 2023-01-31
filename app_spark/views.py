@@ -7,7 +7,8 @@ from django.utils import timezone
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from datetime import timedelta
-from django.urls import reverse, path
+from django.urls import reverse
+from django.contrib import messages
 
 
 class EventList(generic.ListView):
@@ -62,15 +63,17 @@ def add_event(request):
             event = form.save(commit=False)
             event.promoter = request.user
             event.save()
+            messages.success(request, 'Event created successfully.')
             return redirect(
                 reverse('user_profile')
             )
+        else:
+            messages.error(request, 'Something went wrong!, please try again')
+            form = EventForm()
     context = {
         'page_title': 'Create Event',
         'form': form
     }
-
-    return render(request, template, context)
 
 
 @login_required(login_url='/accounts/login/')
@@ -96,6 +99,7 @@ def edit_event(request, event_id):
 
         if form.is_valid():
             form.save()
+            messages.success(request, 'Event edited successfully.')
             return redirect(
                 reverse('user_profile')
             )
@@ -126,6 +130,7 @@ def delete_event(request, event_id):
 
         if form.is_valid():
             event.delete()
+            messages.error(request, 'Event deleted.')
             return redirect(
                 reverse('user_profile')
             )
@@ -134,20 +139,13 @@ def delete_event(request, event_id):
 
 
 def about(request):
-
+    context = {                
+        'page_title': 'About',
+    }
     return render(
         request,
         "about.html",
-)
-
-
-@login_required(login_url='/accounts/login/')
-def create_event(request):
-
-    return render(
-        request,
-        "create_event.html",
-        {"event_form": EventForm()},
+        context
     )
 
 
