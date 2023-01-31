@@ -80,6 +80,7 @@ def add_event(request):
         'page_title': 'Create Event',
         'form': form
     }
+    return render(request, template, context)
 
 
 @login_required(login_url='/accounts/login/')
