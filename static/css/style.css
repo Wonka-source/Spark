@@ -2,23 +2,56 @@ body {
     background-color: #F9FAFC;
 }
 
+
 .brand {
     font-family: 'Courier Prime', monospace, sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: bolder;
     color: #4A4A4F;
 }
 
+.img-thumbnail {
+    width: 50px;
+    height: 50px;
+}
+
+.event_detail_img{
+    
+    height: 300px; 
+    width: 500px;
+}
+
+.link{
+    color: #4b455a;
+    text-decoration: none;
+}
+
+.font-140{
+    font-size: 140%;
+}
+
+.font-130{
+    font-size: 130%;
+}
+
+.font-120{
+    font-size: 120%;
+}
+
+.font-108{
+    font-size: 108%;
+}
+
 .red{
-    color: red;
+    color:rgb(235, 62, 62);
 }
 
 .green{
-    color: green;
+    color:rgb(0, 206, 0);
 }
 
 .blue{
-    color: blue;
+    color: rgb(47, 47, 236);
 }
 
 .navbar-collapse{
@@ -29,7 +62,7 @@ body {
     background-color: #9ba7b3;
 }
 
-h{
+.h{
     font-family:'Franklin Gothic Medium', monospace, sans-serif;
     
 }
@@ -37,4 +70,18 @@ h{
 ul{
     text-decoration: none;
     list-style-type: none;
+}
+
+
+.custom-nav{
+    text-decoration: none;
+    text-shadow: 5px
+}
+
+.custom-nav:hover {
+    color: #0d6efd;
+}
+
+.text-heading-style{
+    color: #e68e1b;
 }

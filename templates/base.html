@@ -4,7 +4,7 @@
 <html class="h-100">
 
 <head>
-    <title>All Spark</title>
+    <title>Spark | {{ page_title }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,75 +22,84 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
 
     <nav class="navbar navbar-expand-md navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><span class="brand red">A<span class="green">l</span><span
-                        class="blue">l</span>
-                    <span class="red"> s</span><span class="green">p</span><span class="blue">a</span><span
+            <a class="navbar-brand" href="{% url 'home' %}">
+                    <span class="red brand"> S<span class="green">p</span><span class="blue">a</span><span
                         class="red">r</span><span class="green">k</span></span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <span class="navbar-text text-muted text-justify">
-                Dublin events
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+            <span class="navbar-text text-muted text-justify font-120 ">
+                Irish Events
             </span>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+            <div class="collapse navbar-collapse justify-content-end font-120" id="navbarText">
                 <ul class="navbar-nav mb-2 mb-lg-0 navbar-text">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    <li class="nav-item coustom-nav">
+                        <a class="nav-link" href="{% url 'home' %}"><span class="custom-nav"><b>Home</b></span></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                        <a class="nav-link" href="/"><span class="custom-nav"><b>Profile</b></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}"><span class="custom-nav"><b>Logout</b></span></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">Signup</a>
+                        <a class="nav-link" href="{% url 'about' %}"><span class="custom-nav"><b>Signup</b></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}"><span class="custom-nav"><b>Login</b></span></a>
                     </li>
                     {% endif %}
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">About</a>
-                    </li> -->
                 </ul>
 
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
+        
         {% endblock content %}
     </main>
 
-    <!-- Footer -->
+
     <footer class="footer mt-auto py-2 bg-dark  justify-content-center">
-        <!-- <p class="m-0 text-center text-white">Dublin events</p> -->
 
-
-        <p class="nav-link m-0 text-center py-0 text-light">Your Event Connection Hub<br>
-            <br>
-        </p>
         {% if user.is_authenticated %}
-        <p class="m-0 text-center py-0 text-light">User logged in<br>
+        <p class="m-0 text-center py-2 text-light">Signed in as:<span class="text-capitalize"> {{ user }} </span>
 
             <br></p>
         {% endif %}
 
+        <p class="m-0 text-center py-0 text-light">Your Event Connection Hub<br>
+            <br>
+        </p>
+
+
 
 
     </footer>
+
 </body>
 
 </html>
