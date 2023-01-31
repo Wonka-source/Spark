@@ -10,5 +10,9 @@ urlpatterns = [
     path('<int:event_id>/', views.event_detail, name='event_detail'),
     path('edit_event/<int:event_id>/', views.edit_event, name='edit_event'),
     path('delete_event/<int:event_id>/', views.delete_event, name='delete_event'),
-
 ]
+
+handler404 = 'app_spark.views.handler404'
+handler500 = 'app_spark.views.handler500'
+handler403 = 'app_spark.views.handler403'
+handler405 = 'app_spark.views.handler405'
