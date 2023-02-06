@@ -2,15 +2,16 @@
 {% block content %}
 <div class="container my-5">
     <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-            <h3 class="text-heading-style py-3">Spark - Ireland's Local Events Hub</h3>
-            <p>Spark is an Irish-owned company based in Dublin with a mission to provide event promoters in Ireland with a platform to promote their local events.
-            </p>
-
-            <h5 class="py-3">Join Us Today</h3>
-            <p>Take the opportunity to promote your events by signing up for a Spark account now.</p>
-            <button class="btn btn-success" type="submit"><a class="nav-link d-inline text-light"
-                    href="{% url 'account_signup' %}">Register</a></button>
+        <div class="col-lg-8 offset-lg-2">            
+            <h3 class="text-heading-style py-3">About Spark - Ireland's Local Events Hub</h3>
+            <p>Spark, an Irish-based company in Dublin, offers a platform for event promoters to showcase their local
+                events. No account is required to view upcoming events on the home page. Click <a
+                    href="{% url 'home' %}">here</a> to browse upcoming events.
+            </p>            
+            <h5 class="py-3">Are you an promoting events in Ireland?</h3>
+                <p>Promote your events with Spark.</p>  Click the button below to sign up for a account now.</p>
+                <button class="btn btn-success" type="submit"><a class="nav-link d-inline text-light"
+                        href="{% url 'account_signup' %}">Sign up</a></button>
 
 
 

@@ -15,6 +15,7 @@ class EventForm(forms.ModelForm):
             'image',
             'where',
             'when',
+            'optional_end_date',
             'description',
             'status',
         )
