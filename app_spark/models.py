@@ -17,7 +17,7 @@ class Event(models.Model):
     image = CloudinaryField(blank=True, default="placeholder")
     where = models.CharField(max_length=250)
     when = models.DateTimeField(default=timezone.now)
-    optional_end_date = models.DateTimeField(blank=True)
+    optional_end_date = models.DateTimeField(null=True, blank=True)
     description = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
