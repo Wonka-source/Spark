@@ -11,8 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 
@@ -21,10 +24,12 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <span class="red brand">
-                    S<span class="green">p</span><span class="blue">a</span><span class="red">r</span><span class="green">k</span></span>
+                    S<span class="green">p</span><span class="blue">a</span><span class="red">r</span><span
+                        class="green">k</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span class="navbar-text text-muted text-justify font-120">
@@ -37,17 +42,20 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user_profile' %}"><span class="custom-nav"><b>Profile</b></span></a>
+                        <a class="nav-link" href="{% url 'user_profile' %}"><span
+                                class="custom-nav"><b>Profile</b></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}"><span class="custom-nav"><b>Logout</b></span></a>
+                        <a class="nav-link" href="{% url 'account_logout' %}"><span
+                                class="custom-nav"><b>Logout</b></span></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}"><span class="custom-nav"><b>Signup</b></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}"><span class="custom-nav"><b>Login</b></span></a>
+                        <a class="nav-link" href="{% url 'account_login' %}"><span
+                                class="custom-nav"><b>Login</b></span></a>
                     </li>
                     {% endif %}
                 </ul>
@@ -86,7 +94,7 @@
         </p>
     </footer>
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();

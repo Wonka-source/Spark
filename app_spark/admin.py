@@ -5,10 +5,12 @@ from .models import Event
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
 
-    list_filter = ('promoter', 'status', 'created_on')
+    list_filter = ('promoter', 'status', 'created_on', 'when')
     list_display = (
-        'promotion_company_name',
-        'when',
-        'where',
+        'promoter',
         'created_on',
+        'title',
+        'promotion_company_name',
+        'where',
+        'when',
         'status')

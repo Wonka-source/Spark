@@ -8,8 +8,9 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <h3>{% block title %} Create Event {% endblock %}</h3>
-            <h5 class="text-danger"><strong>Important!</strong></h5>
-            <h6 class="text-muted my-1 pb-4">Please enter the "When" field in this format: YYYY-MM-DD HH:MM:SS<br> and the "Optional end date" field in this format: YYYY-MM-DD.</h6>
+            <h5 class="text-danger"><strong>Important! Read First!</strong></h5>
+            <h6 class="text-muted my-1 pb-4">Please enter the "When" field in this format: YYYY-MM-DD HH:MM:SS<br> and
+                the "Optional end date" field in this format: YYYY-MM-DD.</h6>
             <form class="" method="POST" action="create_event" enctype="multipart/form-data">
 
                 {{ form.as_p  }}

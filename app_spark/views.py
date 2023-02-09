@@ -12,6 +12,7 @@ from django.contrib import messages
 
 
 class EventList(generic.ListView):
+
     model = Event
     queryset = Event.objects.filter(
         status=1,

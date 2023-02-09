@@ -18,16 +18,18 @@
                 <div class="m-lg-1">
                     <ul></ul>
                     {% if "placeholder" in event.image.url %}
-                    <img height=300 width=500 crop="fill" class="img-fluid" src="/static/images/pexels-aleksandar-pasaric-2078071.jpg">
+                    <img height=300 width=500 crop="fill" class="img-fluid"
+                        src="/static/images/pexels-aleksandar-pasaric-2078071.jpg">
                     {% else %}
                     {% cloudinary event.image height=300 width=500 crop="fill" class="img-fluid" %}
                     {% endif %}
                 </div>
                 <p class="p-0 m-0">Presents:</p>
-                <h4 class="text-lg text-dark text-capitalize">{{ event.title }} <span class="text-primary"> @ </span> {{ event.where }}</h4>                
+                <h4 class="text-lg text-dark text-capitalize">{{ event.title }} <span class="text-primary"> @ </span>
+                    {{ event.where }}</h4>
                 <p class="card-text p-0 m-0 text-muted"><strong>When: </strong>{{ event.when }}</p>
                 {% if event.optional_end_date is blank %}
-                {% else %}                            
+                {% else %}
                 <p class="card-text p-0 m-0 text-muted"><strong>Finishing up: </strong>{{ event.optional_end_date }}</p>
                 {% endif %}
                 <ul></ul>
