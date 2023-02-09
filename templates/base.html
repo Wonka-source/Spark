@@ -76,7 +76,9 @@
     </div>
 
     <main class="flex-shrink-0 main-bg">
-        {% block content %} {% endblock content %}
+        {% block content %} 
+        {% load static %}
+        {% endblock content %}
     </main>
 
     <footer class="footer mt-auto py-2 bg-dark justify-content-center">
