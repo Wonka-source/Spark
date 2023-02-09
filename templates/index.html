@@ -4,10 +4,8 @@
 <div class="container my-2">
     <div class="row">
         <div class="text-center">
-            <h2> {% block title %} <span class="brand red font-108">A<span class="green">l</span><span
-                        class="blue">l</span>
-                    <span class="red"> S</span><span class="green">p</span><span class="blue">a</span><span
-                        class="red">r</span><span class="green">k</span></span> {% endblock %}</h2>
+            <h2> {% block title %} <span class="brand red font-108">A<span class="green">l</span><span class="blue">l</span>
+                    <span class="red"> S</span><span class="green">p</span><span class="blue">a</span><span class="red">r</span><span class="green">k</span></span> {% endblock %}</h2>
         </div>
         <div class="col-12 mt3 left">
             <div class="row">
@@ -17,20 +15,18 @@
                         <div class="card-body">
                             <div class="">
                                 {% if "placeholder" in event.image.url %}
-                                <img class="card-img-top" src="https://images.unsplash.com/photo-1527259693341-cbc6f91e4d6e?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMDd9">
+                                <img class="card-img-top" src="{% static 'images/pexels-aleksandar-pasaric-2078071.jpg' %}">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ event.image.url }}">
                                 {% endif %}
                             </div>
                             <a href="{% url 'event_detail' event.id %}" class="link">
-                                <h2 class="card-title text-capitalize">{{ event.title }} <span class="blue">@</span>
-                                    {{ event.where }}</h2>
+                                <h2 class="card-title text-capitalize">{{ event.title }} <span class="blue">@</span> {{ event.where }}</h2>
                             </a>
                             <p class="card-text p-0 m-0 text-muted"><strong>When: </strong>{{ event.when }}</p>
                             {% if event.optional_end_date is blank %}
                             {% else %}
-                            <p class="card-text p-0 m-0 text-muted"><strong>Finishing up:
-                                </strong>{{ event.optional_end_date }}</p>
+                            <p class="card-text p-0 m-0 text-muted"><strong>Finishing up: </strong>{{ event.optional_end_date }}</p>
                             {% endif %}
                             <p class="card-text text-capitalize">{{ event.promotion_company_name }} </p>
 

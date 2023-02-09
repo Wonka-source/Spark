@@ -19,7 +19,7 @@
                     <ul></ul>
                     {% if "placeholder" in event.image.url %}
                     <img height=300 width=500 crop="fill" class="img-fluid"
-                        src="https://res.cloudinary.com/dmvf3llw4/image/upload/v1675138002/static/images/pexels-aleksandar-pasaric-2078071.2f095c6c14e3.jpg">
+                        src="{% static 'images/pexels-aleksandar-pasaric-2078071.jpg' %}">
                     {% else %}
                     {% cloudinary event.image height=300 width=500 crop="fill" class="img-fluid" %}
                     {% endif %}
