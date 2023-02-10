@@ -18,7 +18,7 @@
 
                 <div class="m-lg-1">
                     <ul></ul>
-                    {% if "placeholder" in event.image.url %}                    
+                    {% if "placeholder" in event.image.url %}
                     {% cloudinary '/static/images/pexels_aleksandar_pasaric_2078071.24b5b79c29a7.jpg' height=300 width=500 crop="fill" class="img-fluid" %}
                     {% else %}
                     {% cloudinary event.image height=300 width=500 crop="fill" class="img-fluid" %}
