@@ -229,3 +229,10 @@ Lighthouse test https://web.dev/measure/:
  - Navigate to the "Deploy" tab and choose Github as deployment option
  - Connect Heroku to your Github repo you can choose automatic or manual deployment, I used automatic.
  - Then push your code to update the app.
+
+
+### Credits
+ - Thank you to Bran, my mentor, for the help during the project.
+
+### Acknowledgements
+- The home page was inspired by the Django blog walkthrough from the Code Institute.
