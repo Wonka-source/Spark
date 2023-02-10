@@ -64,20 +64,26 @@ I chose an RGB color scheme for the logo and a main color palette of white and o
 All python files were validated using [Code Institutes Pep8 validator](https://pep8ci.herokuapp.com) and passed with no errors.
 
 HTML validator https://validator.w3.org/:
+
 ![HTML validator results](/static/images/readme_images/testing_screenshots/html.jpg)
+
 CSS validator https://jigsaw.w3.org/css-validator/:
+
 ![CSS validator results](/static/images/readme_images/testing_screenshots/css.jpg)
+
 Lighthouse test https://web.dev/measure/:
+
 ![Lighthouse test results desktop](/static/images/readme_images/testing_screenshots/desktop_lighthouse.jpg)
+
 ![Lighthouse test results desktop](/static/images/readme_images/testing_screenshots/mobile_lighthouse.jpg)
 
 ### Browser Compatibility
-**Firefox** - No issues
-**Chrome** - No issues
-**Opera** - No issues
-**Microsoft Edge** - No issues
-**Brave** - No issues
-**Waterfox** - No issues
+- **Firefox** - No issues
+- **Chrome** - No issues
+- **Opera** - No issues
+- **Microsoft Edge** - No issues
+- **Brave** - No issues
+- **Waterfox** - No issues
 
 ### ### Manual Testing
 
