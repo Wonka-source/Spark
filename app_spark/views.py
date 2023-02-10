@@ -111,7 +111,9 @@ def edit_event(request, event_id):
             return redirect(
                 reverse("user_profile")
             )
-
+        else:
+            messages.error(request, "Something went wrong!, please try again")
+            form = EventForm()
     return render(request, template, context)
 
 

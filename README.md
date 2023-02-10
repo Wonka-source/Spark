@@ -46,7 +46,91 @@ I chose an RGB color scheme for the logo and a main color palette of white and o
 
 
 ### Features
+Logo:
+ 
+ ![Logo](/static/images/readme_images/features/logo.jpg)
 
+Navbar: 
+
+![Navbar](/static/images/readme_images/features/nav_bar.jpg)
+
+Navbar logged in:
+
+![Navbar logged in](/static/images/readme_images/features/navbar_loged_in.jpg)
+
+Footer:
+
+![Footer](/static/images/readme_images/features/footer.jpg)
+
+Footer logged in:
+
+![Footer logged in](/static/images/readme_images/features/footer_loged_in.jpg)
+
+Home page:
+
+![Home page](/static/images/readme_images/features/home_page.jpg)
+
+Home page navigation:
+
+![Home page nav](/static/images/readme_images/features/home_page_ev_nav_next.jpg)
+
+![Home page nav](/static/images/readme_images/features/home_page_ev_nav_prev.jpg)
+
+Profile page:
+
+![Profile page:](/static/images/readme_images/features/profile_page.jpg)
+
+Create Event:
+
+![Create Event:](/static/images/readme_images/features/create_event.jpg)
+
+Create Event Message:
+
+![Create Event Message](/static/images/readme_images/features/create_event_message.jpg)
+
+Form Error Message:
+
+![Form Error Message](/static/images/readme_images/features/please_try_again.jpg)
+
+Edit Event:
+
+![Edit Event](/static/images/readme_images/features/edit_event.jpg)
+
+Edit Event Message:
+
+![Edit Event Message](/static/images/readme_images/features/edit_event_message.jpg)
+
+Delete Event:
+
+![Delete Event](/static/images/readme_images/features/delete_event.jpg)
+
+Delete event Message:
+
+![Delete event Message](/static/images/readme_images/features/delete_event_message.jpg)
+
+Event Detail:
+
+![Event Detail](/static/images/readme_images/features/event_detail.jpg)
+
+Status draft or post to All Sparks:
+
+![Status draft or post to All Sparks:](/static/images/readme_images/features/post_draft_status.jpg)
+
+About:
+
+![About](/static/images/readme_images/features/about_spark.jpg)
+
+Sign up:
+
+![Sign up](/static/images/readme_images/features/sign_up.jpg)
+
+Sign in:
+
+![Sign in](/static/images/readme_images/features/sign_in.jpg)
+
+Sign in message:
+
+![Sign in message](/static/images/readme_images/features/sign_in_message.jpg)
 
 
 
