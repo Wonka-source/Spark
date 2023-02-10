@@ -42,10 +42,24 @@ I chose an RGB color scheme for the logo and a main color palette of white and o
 
 ### Database model
 
-![Database model](DB%20model%20url)
+![Database model](/static/images/readme_images/other_readme_images/data_model.jpg)
 
 
 ### Features
+ - Navbar
+ - Logo
+ - Log in 
+ - Log out
+ - Profile
+ - Sign up
+ - About
+ - Footer
+ - Home page
+ - Create an event page
+ - Edit event page 
+ - Delete event page
+ - View event page 
+
 Logo:
  
  ![Logo](/static/images/readme_images/features/logo.jpg)
@@ -134,14 +148,29 @@ Sign in message:
 
 
 
-### Future Features
+### Technologies
 
+Python 3
 
+HTML5
 
-### Technoligies 
+CSS
 
+Javascript
 
+Django
 
+Django/allauth
+
+Bootstrap
+
+Cloudinary 
+
+GitHub
+
+Heroku 
+
+Gitpod
 
 
 ### Testing
@@ -172,3 +201,31 @@ Lighthouse test https://web.dev/measure/:
 ### ### Manual Testing
 
 ![Manual testing table](/static/images/readme_images/testing_screenshots/manual_testing.jpg)
+
+### Deployment
+
+ - Create Heroku account  
+ - Click "New" button on the top right of the dashboard
+ - Choose a region and a name for the project, then click "Create app"
+ - Create an ElephantSQL account and Log in
+ - Click “Create New Instance”
+ - Set up your plan
+ - Give your plan a Name (this is commonly the name of the project)
+ - Select the Tiny Turtle (Free) plan
+ - Select “Select Region”
+ - Select a data center near you
+ - Then click “Review”
+ - Check your details are correct and then click “Create instance”
+ - Return to the ElephantSQL dashboard and click on the database instance name for this project
+ - In the URL section, click the copy icon to copy the database URL
+ - In your project workspace, create a file called env.py. It’s a good idea to check that this file is included in the .gitignore file too.
+ - Add your database url and your secret key
+ - save the file
+ - Now import env.py to settings.py
+ - Run the command "python manage.py migrate"
+ - Add, commit and push your project to GitHub 
+ - Go back to the Heroku dashboard open the Settings tab
+ - Reveal the config vars and add Cloudinary and Postgres config vars and the secret key
+ - Navigate to the "Deploy" tab and choose Github as deployment option
+ - Connect Heroku to your Github repo you can choose automatic or manual deployment, I used automatic.
+ - Then push your code to update the app.
