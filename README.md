@@ -232,7 +232,7 @@ Lighthouse test https://web.dev/measure/:
 
 
 ### Credits
- - Thank you to Bran, my mentor, for the help during the project.
+ - Thank you to my mentor, Brian Macharia for his help throughout the project.
 
 ### Acknowledgements
 - The home page was inspired by the Django blog walkthrough from the Code Institute.
