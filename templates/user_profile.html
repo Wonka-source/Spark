@@ -40,13 +40,12 @@
                 <tr>
                     <td class="d-none d-md-table-cell">
                         <a href="{% url 'event_detail' event.id %}" class="link">
-                            {% if "placeholder" in event.image.url %}
-                            <img alt="event thumbnail placeholder image" class="img-thumbnail img-fluid"
-                                src="/static/images/pexels-aleksandar-pasaric-2078071.jpg" />
-                            {% else %}
+                                {% if "placeholder" in event.image.url %}
+                                {% cloudinary "/static/images/pexels_aleksandar_pasaric_2078071.24b5b79c29a7.jpg" class="img-thumbnail img-fluid" %}                                
+                                {% else %}
                             <img alt="event thumbnail image" class="img-thumbnail img-fluid"
                                 src=" {{ event.image.url }}" />
-                            {% endif %}
+                                {% endif %}
                         </a>
                     </td>
                     <td>{{ event.title }}</td>
