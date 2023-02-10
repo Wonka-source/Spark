@@ -1,10 +1,11 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang='en' class="h-100">
+<html lang="en" class="h-100">
 
 <head>
-    <meta name="spark is an event connection hub" description="Spark is an Irish-owned company based in Dublin with a mission to provide event promoters 
+    <meta name="spark is an event connection hub listing upcoming events in Ireland posted by promoters" 
+    content="Spark is an Irish-owned company based in Dublin with a mission to provide event promoters 
         in Ireland with a platform to promote their local events.">
     <title>Spark | {{ page_title }}</title>
 
@@ -99,7 +100,7 @@
     </footer>
     <script>
         setTimeout(function () {
-            let messages = document.getElementById('msg');
+            let messages = document.getElementById("msg");
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 2500);

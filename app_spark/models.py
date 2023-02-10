@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils import timezone
 
-STATUS = ((0, 'Draft'), (1, "Post to All sparks"))
+STATUS = ((0, "Draft"), (1, "Post to All sparks"))
 
 
 class Event(models.Model):
@@ -23,7 +23,7 @@ class Event(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ['-when']
+        ordering = ["-when"]
 
     def __str__(self):
         return self.title

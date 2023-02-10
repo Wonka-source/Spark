@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+
 {% block content %}
+
 {% load static %}
+
 {% load cloudinary %}
 
 <div class="container my-2">
@@ -19,7 +22,7 @@
                         <div class="card-body">
                             <div class="">
                                 {% if "placeholder" in event.image.url %}
-                                {% cloudinary '/static/images/pexels_aleksandar_pasaric_2078071.24b5b79c29a7.jpg' class="card-img-top" %}
+                                {% cloudinary "/static/images/pexels_aleksandar_pasaric_2078071.24b5b79c29a7.jpg" class="card-img-top" %}
                                 {% else %}
                                 <img class="card-img-top"  alt="event image" src="{{ event.image.url }}">
                                 {% endif %}

@@ -19,8 +19,8 @@ class EventList(generic.ListView):
         when__gte=(
             timezone.now() -
             timedelta(
-                hours=24))).order_by('when')
-    template_name = 'index.html'
+                hours=24))).order_by("when")
+    template_name = "index.html"
     paginate_by = 6
 
 
@@ -28,25 +28,25 @@ class UserProfile(LoginRequiredMixin, View):
 
     def get(self, request):
         user_event_list = Event.objects.filter(
-            promoter=request.user).all().order_by('-created_on')
+            promoter=request.user).all().order_by("-created_on")
         today = timezone.now()
         return render(
             request,
             "user_profile.html",
             {
                 "user_event_list": user_event_list,
-                'page_title': 'Profile',
-                'today': today,
+                "page_title": "Profile",
+                "today": today,
             }
         )
 
 
 def event_detail(request, event_id):
     event = get_object_or_404(Event, id=event_id)
-    template = 'event_detail.html'
+    template = "event_detail.html"
     context = {
-        'page_title': 'Event Detail',
-        'event': event
+        "page_title": "Event Detail",
+        "event": event
     }
     if event.status == 1:
         return render(request, template, context)
@@ -56,35 +56,35 @@ def event_detail(request, event_id):
         raise PermissionDenied
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url="/accounts/login/")
 def add_event(request):
 
-    template = 'create_event.html'
+    template = "create_event.html"
 
     form = EventForm()
 
-    if request.method == 'POST':
+    if request.method == "POST":
         form = EventForm(request.POST, request.FILES)
 
         if form.is_valid():
             event = form.save(commit=False)
             event.promoter = request.user
             event.save()
-            messages.success(request, 'Event created successfully.')
+            messages.success(request, "Event created successfully.")
             return redirect(
-                reverse('user_profile')
+                reverse("user_profile")
             )
         else:
-            messages.error(request, 'Something went wrong!, please try again')
+            messages.error(request, "Something went wrong!, please try again")
             form = EventForm()
     context = {
-        'page_title': 'Create Event',
-        'form': form
+        "page_title": "Create Event",
+        "form": form
     }
     return render(request, template, context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url="/accounts/login/")
 def edit_event(request, event_id):
 
     event = get_object_or_404(Event, id=event_id)
@@ -93,29 +93,29 @@ def edit_event(request, event_id):
 
     form = EventForm(instance=event)
 
-    template = 'edit_event.html'
+    template = "edit_event.html"
 
     context = {
-        'page_title': 'Edit Event',
-        'form': form,
-        'event_id': event_id,
+        "page_title": "Edit Event",
+        "form": form,
+        "event_id": event_id,
     }
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         form = EventForm(request.POST, request.FILES, instance=event)
 
         if form.is_valid():
             form.save()
-            messages.success(request, 'Event edited successfully.')
+            messages.success(request, "Event edited successfully.")
             return redirect(
-                reverse('user_profile')
+                reverse("user_profile")
             )
 
     return render(request, template, context)
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url="/accounts/login/")
 def delete_event(request, event_id):
 
     event = get_object_or_404(Event, id=event_id)
@@ -124,23 +124,23 @@ def delete_event(request, event_id):
 
     form = EventForm(instance=event)
 
-    template = 'delete_event.html'
+    template = "delete_event.html"
 
     context = {
-        'page_title': 'Delete Event',
-        'form': form,
-        'event_id': event_id,
+        "page_title": "Delete Event",
+        "form": form,
+        "event_id": event_id,
     }
 
-    if request.method == 'POST':
+    if request.method == "POST":
 
         form = EventForm(request.POST, request.FILES, instance=event)
 
         if form.is_valid():
             event.delete()
-            messages.error(request, 'Event deleted.')
+            messages.error(request, "Event deleted.")
             return redirect(
-                reverse('user_profile')
+                reverse("user_profile")
             )
 
     return render(request, template, context)
@@ -148,7 +148,7 @@ def delete_event(request, event_id):
 
 def about(request):
     context = {
-        'page_title': 'About',
+        "page_title": "About",
     }
     return render(
         request,
